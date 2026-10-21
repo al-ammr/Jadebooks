@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0A0F1C;
+    --bg-elev: #111A2E;
+    --bg-card: #141F36;
+    --border: #1E2A44;
+    --text: #F2F5FA;
+    --text-muted: #9AA7BF;
+    --jade: #2FD6A0;
+    --jade-deep: #0E7C5A;
+    --gold: #E3B94A;
+    --gold-hover: #CF9F30;
+    --danger: #F26D6D;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* 3D Book CSS Rendering Styles */
+.book-stage {
+  perspective: 1200px;
+}
+
+.book-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transform: rotateY(-18deg) rotateX(4deg);
+}
+
+.book-3d:hover {
+  transform: rotateY(-8deg) rotateX(1deg) translateY(-8px);
+}
+
+.book-pages-edge {
+  position: absolute;
+  top: 4px;
+  right: -16px;
+  width: 20px;
+  height: calc(100% - 8px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #d8d4c9,
+    #d8d4c9 2px,
+    #ece8df 2px,
+    #ece8df 4px
+  );
+  transform: rotateY(90deg) translateZ(10px);
+  box-shadow: inset 2px 0 6px rgba(0, 0, 0, 0.35);
+  border-radius: 0 3px 3px 0;
+}
+
+.book-spine {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 24px;
+  height: 100%;
+  transform: rotateY(-90deg) translateZ(10px);
+  box-shadow: inset -3px 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Subtle glowing pulse */
+@keyframes soft-glow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.04);
+  }
+}
+
+.animate-soft-glow {
+  animation: soft-glow 6s ease-in-out infinite;
+}
+
+/* Custom discreet scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F1C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2A44;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2FD6A0;
+}

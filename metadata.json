@@ -1,0 +1,6 @@
+{
+  "name": "Jade Capital — Multi-Book Publishing",
+  "description": "High-converting multi-book landing page system and publishing dashboard for Jade Capital by Eleine Kayrah Jaine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
